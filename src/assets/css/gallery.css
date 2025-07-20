@@ -1,0 +1,234 @@
+/* Gallery Hero Section */
+.gallery-hero {
+  background-color: var(--color-primary);
+  padding: 8rem 0 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(93, 123, 106, 0.7) 0%, rgba(132, 174, 146, 0.5) 100%);
+  z-index: 1;
+}
+
+.gallery-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Gallery Filter */
+.gallery-filter {
+  background-color: var(--color-white);
+  padding: 1.5rem 0;
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 70px;
+  z-index: 100;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.filter-buttons button {
+  background-color: transparent;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.filter-buttons button.active,
+.filter-buttons button:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* Gallery Grid */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  height: 300px;
+  transition: var(--transition);
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
+
+.overlay span {
+  color: var(--color-white);
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  border: 2px solid var(--color-white);
+  border-radius: var(--border-radius-sm);
+}
+
+.no-images {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 2rem;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: var(--border-radius-md);
+}
+
+.close-lightbox {
+  position: absolute;
+  top: -2rem;
+  right: -2rem;
+  background-color: transparent;
+  border: none;
+  color: var(--color-white);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.close-lightbox:hover {
+  color: var(--color-primary-light);
+  transform: scale(1.1);
+}
+
+.lightbox-caption {
+  color: var(--color-white);
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+/* Instagram Section */
+.instagram-section {
+  text-align: center;
+}
+
+.instagram-text {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+  .gallery-hero {
+    padding: 7rem 0 3.5rem;
+  }
+
+  .gallery-filter {
+    top: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .filter-buttons {
+    gap: 0.75rem;
+  }
+
+  .filter-buttons button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .gallery-item {
+    height: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .gallery-hero {
+    padding: 6rem 0 3rem;
+  }
+
+  .gallery-filter {
+    padding: 1rem 0;
+  }
+
+  .image-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+
+  .gallery-item {
+    height: 200px;
+  }
+
+  .lightbox-content {
+    max-width: 95%;
+  }
+}
