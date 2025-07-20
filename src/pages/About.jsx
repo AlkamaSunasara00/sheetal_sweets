@@ -38,7 +38,7 @@ const About = () => {
               </p>
             </div>
             <div className="about-image">
-              {/* <img src={aboutImage} alt="Sheetal Sweets & Bakery storefront" /> */}
+              <img src='https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?cs=srgb&dl=pexels-souvenirpixels-414612.jpg&fm=jpg' />
             </div>
           </div>
         </div>

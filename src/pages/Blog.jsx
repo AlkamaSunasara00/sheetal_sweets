@@ -3,20 +3,11 @@ import '../assets/css/blog.css';
 import { Link } from 'react-router-dom';
 import { FaCalendarAlt, FaUser, FaComment, FaSearch, FaTags } from 'react-icons/fa';
 
-// Import blog images
-// import blog1 from '../assets/images/blog-1.jpg';
-// import blog2 from '../assets/images/blog-2.jpg';
-// import blog3 from '../assets/images/blog-3.jpg';
-// import blog4 from '../assets/images/blog-4.jpg';
-// import blog5 from '../assets/images/blog-5.jpg';
-// import blog6 from '../assets/images/blog-6.jpg';
-// import recentPost1 from '../assets/images/recent-post-1.jpg';
-// import recentPost2 from '../assets/images/recent-post-2.jpg';
-// import recentPost3 from '../assets/images/recent-post-3.jpg';
-
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState('all');
+
+  // const getRandomImage = (id) => `https://source.unsplash.com/random/800x600?sig=${id}`;
 
   const blogPosts = [
     {
@@ -26,7 +17,7 @@ const Blog = () => {
       date: "June 15, 2023",
       author: "Sheetal Patel",
       comments: 12,
-      // image: blog1,
+      image:  "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=600&fit=crop",
       category: "recipes",
       featured: true
     },
@@ -37,7 +28,7 @@ const Blog = () => {
       date: "May 28, 2023",
       author: "Raj Sharma",
       comments: 8,
-      // image: blog2,
+      image: "https://images.unsplash.com/photo-1582716401301-b2407dc7563d?w=400&h=450&fit=crop",
       category: "culture"
     },
     {
@@ -47,7 +38,7 @@ const Blog = () => {
       date: "May 10, 2023",
       author: "Priya Patel",
       comments: 15,
-      // image: blog3,
+      image: "https://images.unsplash.com/photo-1582716401301-b2407dc7563d?w=400&h=450&fit=crop",
       category: "tips",
       featured: true
     },
@@ -58,7 +49,7 @@ const Blog = () => {
       date: "April 22, 2023",
       author: "Sheetal Patel",
       comments: 6,
-      // image: blog4,
+      image: "https://images.unsplash.com/photo-1582716401301-b2407dc7563d?w=400&h=450&fit=crop",
       category: "seasonal"
     },
     {
@@ -68,7 +59,7 @@ const Blog = () => {
       date: "April 5, 2023",
       author: "Anita Desai",
       comments: 20,
-      // image: blog5,
+      image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&h=600&fit=crop",
       category: "tips",
       featured: true
     },
@@ -79,7 +70,7 @@ const Blog = () => {
       date: "March 18, 2023",
       author: "Dr. Vikram Singh",
       comments: 14,
-      // image: blog6,
+      image:  "https://images.unsplash.com/photo-1582716401301-b2407dc7563d?w=400&h=450&fit=crop",
       category: "health"
     }
   ];
@@ -107,13 +98,9 @@ const Blog = () => {
   };
 
   const filteredPosts = blogPosts.filter(post => {
-    // Filter by category
     const categoryMatch = activeCategory === 'all' || post.category === activeCategory;
-    
-    // Filter by search term
     const searchMatch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
                         post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
-    
     return categoryMatch && searchMatch;
   });
 
@@ -121,7 +108,6 @@ const Blog = () => {
 
   return (
     <div className="blog-page">
-      {/* Hero Section */}
       <section className="blog-hero">
         <div className="container">
           <h1 className="page-title">Our Blog</h1>
@@ -129,7 +115,6 @@ const Blog = () => {
         </div>
       </section>
 
-      {/* Featured Posts */}
       {featuredPosts.length > 0 && (
         <section className="featured-posts section">
           <div className="container">
@@ -157,12 +142,10 @@ const Blog = () => {
         </section>
       )}
 
-      {/* Blog Content */}
       <section className="blog-content section">
         <div className="container">
           <div className="blog-container">
             <div className="blog-main">
-              {/* Blog Filter */}
               <div className="blog-filter">
                 <div className="category-filter">
                   {categories.map((category) => (
@@ -177,7 +160,6 @@ const Blog = () => {
                 </div>
               </div>
 
-              {/* Blog Posts */}
               {filteredPosts.length > 0 ? (
                 <div className="blog-grid">
                   {filteredPosts.map((post) => (
@@ -208,7 +190,6 @@ const Blog = () => {
             </div>
 
             <div className="blog-sidebar">
-              {/* Search Widget */}
               <div className="sidebar-widget search-widget">
                 <h3>Search</h3>
                 <div className="search-input">
@@ -222,67 +203,6 @@ const Blog = () => {
                 </div>
               </div>
 
-              {/* Recent Posts Widget */}
-              <div className="sidebar-widget recent-posts">
-                <h3>Recent Posts</h3>
-                <div className="recent-posts-list">
-                  <div className="recent-post-item">
-                    <div className="recent-post-image">
-                      {/* <img src={recentPost1} alt="Recent post" /> */}
-                    </div>
-                    <div className="recent-post-content">
-                      <h4>Summer Dessert Recipes</h4>
-                      <span>July 5, 2023</span>
-                    </div>
-                  </div>
-                  <div className="recent-post-item">
-                    <div className="recent-post-image">
-                      {/* <img src={recentPost2} alt="Recent post" /> */}
-                    </div>
-                    <div className="recent-post-content">
-                      <h4>Wedding Cake Trends 2023</h4>
-                      <span>June 28, 2023</span>
-                    </div>
-                  </div>
-                  <div className="recent-post-item">
-                    <div className="recent-post-image">
-                      {/* <img src={recentPost3} alt="Recent post" /> */}
-                    </div>
-                    <div className="recent-post-content">
-                      <h4>Gluten-Free Baking Guide</h4>
-                      <span>June 20, 2023</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Categories Widget */}
-              <div className="sidebar-widget categories-widget">
-                <h3>Categories</h3>
-                <ul>
-                  {categories.filter(cat => cat.name !== 'all').map((category) => (
-                    <li key={category.name} onClick={() => handleCategoryChange(category.name)}>
-                      <a href="#!" onClick={(e) => e.preventDefault()}>
-                        {category.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Tags Widget */}
-              <div className="sidebar-widget tags-widget">
-                <h3>Popular Tags</h3>
-                <div className="tags-cloud">
-                  {tags.map((tag, index) => (
-                    <a href="#!" key={index} onClick={(e) => e.preventDefault()}>
-                      <FaTags /> {tag}
-                    </a>
-                  ))}
-                </div>
-              </div>
-
-              {/* Newsletter Widget */}
               <div className="sidebar-widget newsletter-widget">
                 <h3>Newsletter</h3>
                 <p>Subscribe to our newsletter for the latest updates and offers.</p>

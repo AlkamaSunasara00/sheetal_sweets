@@ -1,7 +1,9 @@
 /* Blog Hero Section */
 .blog-hero {
   background-color: var(--color-primary);
-  padding: 8rem 0 4rem;
+   background-image: url('../images/blog-banner.jpg');
+  background-size: cover;
+  padding: 13rem 0 9rem;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -104,7 +106,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-bottom: 1.5rem;
 }
 
 .category-filter button {

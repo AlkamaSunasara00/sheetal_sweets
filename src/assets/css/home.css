@@ -33,6 +33,7 @@
 .hero-content h1 {
   margin-bottom: 1.5rem;
   color: var(--color-primary-dark);
+  font-size: 60px;
 }
 
 .hero-content p {
@@ -44,6 +45,7 @@
 
 .hero-buttons {
   display: flex;
+  justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
 }
@@ -65,6 +67,46 @@
 
 .hero-image:hover img {
   transform: scale(1.03);
+}
+
+
+.hero.hero-overlay {
+  position: relative;
+  background-image: url('https://www.commercialdesignindia.com/cloud/2024/03/20/WhatsApp-Image-2024-03-20-at-22.56.58_de6c0ea5-1024x684.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero.hero-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(44, 44, 44, 0.699); /* 60% dark overlay */
+  z-index: 1;
+}
+
+.hero-overlay-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.hero-overlay-content h1 {
+  font-size: 50px;
+  margin-bottom: 1.5rem;
+}
+
+.hero-overlay-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #eee;
 }
 
 /* Features Section */
@@ -169,6 +211,66 @@
   margin-bottom: 1.5rem;
   color: var(--color-text);
 }
+
+/* Offer Section - STYLES */
+.offer-section {
+  position: relative;
+  padding: 5rem 0;
+  background-image: url('https://images.unsplash.com/photo-1519730595081-3aa2144d0339?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Example offer background image */
+  background-size: cover;
+  background-position: center;
+  color: var(--color-white);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.offer-background-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Darker overlay for text readability */
+  z-index: 1;
+}
+
+.offer-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+
+.offer-content .section-title {
+  color: var(--color-white); /* Override section title color for dark background */
+  margin-bottom: 1rem;
+  font-size: 2.5rem; /* Larger font size for prominence */
+}
+
+.offer-content p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.offer-icon {
+  font-size: 3rem;
+  color: #FFD700; /* Gold color for the offer icon */
+  margin-bottom: 1.5rem;
+  display: inline-block; /* To center the icon */
+}
+
+.offer-section .btn-white {
+  background-color: var(--color-white);
+  color: var(--color-primary-dark);
+  border: 2px solid var(--color-white);
+  transition: var(--transition);
+}
+
+.offer-section .btn-white:hover {
+  background-color: transparent;
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
 
 /* Testimonials Section */
 .testimonials {
@@ -284,58 +386,67 @@
   .hero-container {
     grid-template-columns: 1fr;
   }
-  
+
   .hero-content {
     text-align: center;
     order: 2;
   }
-  
+
   .hero-content p {
     max-width: 100%;
   }
-  
+
   .hero-buttons {
     justify-content: center;
   }
-  
+
   .hero-image {
     order: 1;
     max-width: 500px;
     margin: 0 auto;
   }
-  
+
   .feature-card,
   .product-card,
   .testimonial-card {
     max-width: 500px;
     margin: 0 auto;
   }
+
+  .offer-content .section-title {
+    font-size: 2rem; /* Adjust for smaller screens */
+  }
+
 }
 
 @media (max-width: 576px) {
   .hero {
     padding: 6rem 0 3rem;
   }
-  
+
   .hero-content h1 {
     font-size: 2rem;
   }
-  
+
   .hero-buttons {
     flex-direction: column;
     gap: 0.75rem;
   }
-  
+
   .hero-buttons .btn {
     width: 100%;
   }
-  
+
   .cta-buttons {
     flex-direction: column;
     gap: 0.75rem;
   }
-  
+
   .cta-buttons .btn {
     width: 100%;
+  }
+
+  .offer-content .section-title {
+    font-size: 1.8rem; /* Further adjustment for very small screens */
   }
 }

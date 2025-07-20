@@ -251,13 +251,13 @@ const Menu = () => {
             </div>
             <div className="search-filter">
               <div className="search-input">
-                <FaSearch />
                 <input 
                   type="text" 
                   placeholder="Search our menu..." 
                   value={searchTerm}
                   onChange={handleSearch}
                 />
+                <span><FaSearch /></span>
               </div>
             </div>
           </div>

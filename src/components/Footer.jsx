@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/css/footer.css';
+import Logo from '../assets/images/logoo.png';
 // import Logo from '../assets/images/logo.png';
 import { FaFacebook, FaInstagram, FaTwitter, FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
 
@@ -12,10 +13,12 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-logo">
-            <Link to="/">
-              {/* <img src={Logo} alt="Sheetal Sweets & Bakery" /> */}
+            <div style={{display:'flex',gap:'10px'}}>
+              <Link to="/">
+              <img src={Logo} alt="Sheetal Sweets & Bakery" />
             </Link>
             <h3>Sheetal Sweets & Bakery</h3>
+            </div>
             <p>Delighting taste buds since 1995 with our authentic sweets and freshly baked goods.</p>
             <div className="social-links">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">

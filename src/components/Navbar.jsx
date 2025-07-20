@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import '../assets/css/navbar.css';
-// import Logo from '../assets/images/logo.png';
+import Logo from '../assets/images/logoo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,8 +34,8 @@ const Navbar = () => {
     <header className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container navbar-container">
         <Link to="/" className="logo" onClick={closeMenu}>
-          {/* <img src={Logo} alt="Sheetal Sweets & Bakery" /> */}
-          <span>Sheetal Sweets & Bakery</span>
+          <img src={Logo} alt="Sheetal Sweets & Bakery" />
+          <span>Sheetal Sweets</span>
         </Link>
         
         <div className={`nav-toggle ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>

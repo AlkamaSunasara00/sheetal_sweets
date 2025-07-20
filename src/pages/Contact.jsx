@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import '../assets/css/contact.css';
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaCheck } from 'react-icons/fa';
-// import mapImage from '../assets/images/store-map.jpg';
-
+import mapImage from '../assets/images/map.jpg';
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -242,7 +241,7 @@ const Contact = () => {
             <div className="map-container">
               <h2>Visit Our Store</h2>
               <div className="map">
-                {/* <img src={mapImage} alt="Map showing the location of Sheetal Sweets & Bakery" /> */}
+                <img src={mapImage} alt="Map showing the location of Sheetal Sweets & Bakery" />
                 <a 
                   href="https://maps.google.com/?q=123+Bakery+Street+Sweet+City+SC+12345" 
                   target="_blank" 

@@ -1,34 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/css/home.css';
-// import heroImage from '../../public/uploads/1745489708317offer2.jpeg';
-// import product1 from '../assets/images/product-1.jpg';
-// import product2 from '../assets/images/product-2.jpg';
-// import product3 from '../assets/images/product-3.jpg';
-// import testimonial1 from '../assets/images/testimonial-1.jpg';
-// import testimonial2 from '../assets/images/testimonial-2.jpg';
-// import testimonial3 from '../assets/images/testimonial-3.jpg';
-import { FaStar, FaLeaf, FaBirthdayCake, FaAward } from 'react-icons/fa';
+import { FaStar, FaLeaf, FaBirthdayCake, FaAward, FaStore } from 'react-icons/fa'; // Changed FaPercent to FaStore
 
 const Home = () => {
   return (
     <div className="home-page">
       {/* Hero Section */}
-      <section className="hero">
-        <div className="container hero-container">
-          <div className="hero-content">
-            <h1>Delicious Sweets & Fresh Bakery</h1>
-            <p>
-              Experience the authentic taste of traditional Indian sweets and freshly baked goods 
-              made with love, premium ingredients, and generations of expertise.
-            </p>
-            <div className="hero-buttons">
-              <Link to="/menu" className="btn">Explore Our Menu</Link>
-              <Link to="/contact" className="btn btn-outline">Order Now</Link>
-            </div>
-          </div>
-          <div className="hero-image">
-             <img src="/uploads/1745489708317offer2.jpeg" alt="Assorted sweets and bakery items" />
+      <section className="hero hero-overlay">
+        <div className="hero-overlay-content">
+          <h1>Delicious Sweets & Fresh Bakery</h1>
+          <p>
+            Experience the authentic taste of traditional Indian sweets and freshly baked goods
+            made with love, premium ingredients, and generations of expertise.
+          </p>
+          <div className="hero-buttons">
+            <Link to="/menu" className="btn">Explore Our Menu</Link>
+            <Link to="/contact" className="btn btn-outline">Order Now</Link>
           </div>
         </div>
       </section>
@@ -44,7 +32,7 @@ const Home = () => {
               <h3>Quality Ingredients</h3>
               <p>We use only the finest and freshest ingredients in all our products.</p>
             </div>
-            
+
             <div className="feature-card">
               <div className="feature-icon">
                 <FaBirthdayCake />
@@ -52,7 +40,7 @@ const Home = () => {
               <h3>Custom Orders</h3>
               <p>Special occasion? We create custom sweets and cakes for any celebration.</p>
             </div>
-            
+
             <div className="feature-card">
               <div className="feature-icon">
                 <FaAward />
@@ -71,7 +59,7 @@ const Home = () => {
           <div className="products-grid">
             <div className="product-card">
               <div className="product-image">
-                <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1iVnJqFOH_K8WYo2iihRL3CAzwoEIjCfgIg&s' alt="Fresh Bread and Pastries" />
+                <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1iVnJqFOH_K8WYo2iihRL3CAzwoEIjCfgIg&s' alt="Traditional Indian Sweets" />
               </div>
               <div className="product-content">
                 <h3>Traditional Sweets</h3>
@@ -79,7 +67,7 @@ const Home = () => {
                 <Link to="/menu" className="btn">View All Sweets</Link>
               </div>
             </div>
-            
+
             <div className="product-card">
               <div className="product-image">
                 <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1iVnJqFOH_K8WYo2iihRL3CAzwoEIjCfgIg&s' alt="Fresh Bread and Pastries" />
@@ -90,10 +78,10 @@ const Home = () => {
                 <Link to="/menu" className="btn">View Bakery Items</Link>
               </div>
             </div>
-            
+
             <div className="product-card">
               <div className="product-image">
-                <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1iVnJqFOH_K8WYo2iihRL3CAzwoEIjCfgIg&s' alt="Fresh Bread and Pastries" />
+                <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1iVnJqFOH_K8WYo2iihRL3CAzwoEIjCfgIg&s' alt="Celebration Cakes" />
               </div>
               <div className="product-content">
                 <h3>Celebration Cakes</h3>
@@ -102,6 +90,22 @@ const Home = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Offer Section - FESTIVAL/IN-STORE */}
+      <section className="offer-section section">
+        <div className="offer-background-overlay"></div>
+        <div className="container offer-content">
+          <div className="offer-icon">
+            <FaStore /> {/* Changed icon to FaStore */}
+          </div>
+          <h2 className="section-title">Festival Special: Exciting Offers In-Store!</h2>
+          <p>
+            Celebrate the festivities with our special discounts on your favorite traditional sweets and bakery delights.
+            Visit our store to discover our limited-time festival offers!
+          </p>
+          <Link to="/contact" className="btn btn-white">Find Our Store</Link> {/* Link to contact page */}
         </div>
       </section>
 
@@ -119,7 +123,7 @@ const Home = () => {
                 <FaStar />
               </div>
               <p className="testimonial-text">
-                "The sweets from Sheetal are absolutely authentic and remind me of my childhood in India. 
+                "The sweets from Sheetal are absolutely authentic and remind me of my childhood in India.
                 Their Kaju Katli is the best I've had outside of my mother's kitchen!"
               </p>
               <div className="testimonial-author">
@@ -130,7 +134,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="testimonial-card">
               <div className="testimonial-rating">
                 <FaStar />
@@ -140,7 +144,7 @@ const Home = () => {
                 <FaStar />
               </div>
               <p className="testimonial-text">
-                "I ordered a custom birthday cake for my daughter and it exceeded all expectations. 
+                "I ordered a custom birthday cake for my daughter and it exceeded all expectations.
                 Not only was it beautiful, but it tasted amazing too!"
               </p>
               <div className="testimonial-author">
@@ -151,7 +155,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="testimonial-card">
               <div className="testimonial-rating">
                 <FaStar />
@@ -161,7 +165,7 @@ const Home = () => {
                 <FaStar />
               </div>
               <p className="testimonial-text">
-                "Their fresh bread is a staple in our home. We visit every weekend to stock up. 
+                "Their fresh bread is a staple in our home. We visit every weekend to stock up.
                 The quality and taste are consistently excellent."
               </p>
               <div className="testimonial-author">

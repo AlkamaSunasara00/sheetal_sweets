@@ -1,7 +1,9 @@
 /* About Hero Section */
 .about-hero {
   background-color: var(--color-primary);
-  padding: 8rem 0 4rem;
+  background-image: url('../images/gallery.jpeg');
+  background-size: cover;
+  padding: 13rem 0 9rem;
   text-align: center;
   position: relative;
   overflow: hidden;
